@@ -1,3 +1,6 @@
 [submodule "tailscale/tailscale"]
 	path = tailscale/tailscale
 	url = https://github.com/tailscale/tailscale
+[submodule "rathole/rathole"]
+	path = rathole/rathole
+	url = https://github.com/rapiz1/rathole
