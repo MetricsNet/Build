@@ -4,3 +4,6 @@
 [submodule "rathole/rathole"]
 	path = rathole/rathole
 	url = https://github.com/rapiz1/rathole
+[submodule "prometheus/prometheus"]
+	path = prometheus/prometheus
+	url = https://github.com/prometheus/prometheus

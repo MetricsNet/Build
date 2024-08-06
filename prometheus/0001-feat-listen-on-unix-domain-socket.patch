@@ -1,0 +1,33 @@
+From 548f1ba701fe1514e04e06fec30b47da1e90a073 Mon Sep 17 00:00:00 2001
+From: Menci <huanghaorui301@gmail.com>
+Date: Tue, 6 Aug 2024 14:03:53 +0800
+Subject: [PATCH] feat: listen on unix domain socket
+
+---
+ web/web.go | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/web/web.go b/web/web.go
+index 9426ed935..19a013f0a 100644
+--- a/web/web.go
++++ b/web/web.go
+@@ -570,7 +570,15 @@ func (h *Handler) Reload() <-chan chan error {
+ func (h *Handler) Listener() (net.Listener, error) {
+ 	level.Info(h.logger).Log("msg", "Start listening for connections", "address", h.options.ListenAddress)
+ 
+-	listener, err := net.Listen("tcp", h.options.ListenAddress)
++	var listener net.Listener
++	var err error
++
++	if strings.HasPrefix(h.options.ListenAddress, "unix:") {
++		socketPath := strings.TrimPrefix(h.options.ListenAddress, "unix:")
++		listener, err = net.Listen("unix", socketPath)
++	} else {
++		listener, err = net.Listen("tcp", h.options.ListenAddress)
++	}
+ 	if err != nil {
+ 		return listener, err
+ 	}
+-- 
+2.46.0
+
