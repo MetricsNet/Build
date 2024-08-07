@@ -41,4 +41,4 @@ jobs:
           context: go-forwarder
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/menci/metricsnet/go-forwarder:latest
+          tags: ghcr.io/metricsnet/go-forwarder:latest

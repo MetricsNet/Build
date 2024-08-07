@@ -55,4 +55,4 @@ jobs:
           context: rathole
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/menci/metricsnet/rathole:latest
+          tags: ghcr.io/metricsnet/rathole:latest

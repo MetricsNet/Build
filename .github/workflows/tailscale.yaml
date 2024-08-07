@@ -33,4 +33,4 @@ jobs:
         run: "./build_docker.sh"
         env:
           PUSH: true
-          REPOS: ghcr.io/menci/metricsnet/tailscale
+          REPOS: ghcr.io/metricsnet/tailscale

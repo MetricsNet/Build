@@ -1,4 +1,4 @@
-module github.com/Menci/MetricsNet/go-forwarder
+module github.com/metricsnet/build/go-forwarder
 
 go 1.22.5
 
